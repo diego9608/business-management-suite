@@ -6,7 +6,7 @@ import UltimateCafeSystem from './UltimateCafeSystem';
 import MobileSocialIntegration from './MobileSocialIntegration';
 
 const App = () => {
-  const [activeSystem, setActiveSystem] = useState('management');
+  const [activeSystem, setActiveSystem] = useState('pos'); // Changed default to POS
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -20,14 +20,14 @@ const App = () => {
             </div>
             <div className="flex gap-2">
               <button
-                onClick={() => setActiveSystem('management')}
+                onClick={() => setActiveSystem('pos')}
                 className={`px-4 py-2 rounded-lg transition ${
-                  activeSystem === 'management' 
-                    ? 'bg-gray-900 text-white' 
+                  activeSystem === 'pos' 
+                    ? 'bg-blue-600 text-white' 
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
-                Management
+                POS System
               </button>
               <button
                 onClick={() => setActiveSystem('insights')}
@@ -37,17 +37,17 @@ const App = () => {
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
-                AI Insights
+                Supplier Hub
               </button>
               <button
-                onClick={() => setActiveSystem('pos')}
+                onClick={() => setActiveSystem('management')}
                 className={`px-4 py-2 rounded-lg transition ${
-                  activeSystem === 'pos' 
-                    ? 'bg-blue-600 text-white' 
+                  activeSystem === 'management' 
+                    ? 'bg-gray-900 text-white' 
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
               >
-                POS System
+                Management
               </button>
               <button
                 onClick={() => setActiveSystem('mobile')}
